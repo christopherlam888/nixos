@@ -44,5 +44,46 @@ in
     home.sessionVariables = {
       EDITOR = "lvim";
     };
+
+    xdg.mimeApps = {
+      enable = true;
+      
+      defaultApplications = {
+        "text/html" = "brave-browser.desktop";
+        "x-scheme-handler/http" = "brave-browser.desktop";
+        "x-scheme-handler/https" = "brave-browser.desktop";
+        "x-scheme-handler/about" = "brave-browser.desktop";
+        "x-scheme-handler/unknown" = "brave-browser.desktop";
+        "application/pdf" = ["org.pwmt.zathura.desktop"];
+      };
+    };
+    # https://discourse.nixos.org/t/set-default-application-for-mime-type-with-home-manager/17190/4
+
+    home.pointerCursor = {
+      gtk.enable = true;
+      # x11.enable = true;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 16;
+    };
+
+    gtk = {
+      enable = true;
+
+      theme = {
+        package = pkgs.flat-remix-gtk;
+        name = "Flat-Remix-GTK-Grey-Darkest";
+      };
+
+      iconTheme = {
+        package = pkgs.gnome.adwaita-icon-theme;
+        name = "Adwaita";
+      };
+
+      font = {
+        name = "Sans";
+        size = 11;
+      };
+    };
   };
 }
