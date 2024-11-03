@@ -170,6 +170,7 @@ in
     gitui
     glmark2
     glxinfo
+    gnome.nautilus
     handbrake
     hyprpaper
     hyprshot

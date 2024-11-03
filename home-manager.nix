@@ -43,6 +43,7 @@ in
 
     home.sessionVariables = {
       EDITOR = "lvim";
+      GTK_THEME = "Tokyonight-Dark-B";
     };
 
     xdg.mimeApps = {
@@ -57,7 +58,6 @@ in
         "application/pdf" = ["org.pwmt.zathura.desktop"];
       };
     };
-    # https://discourse.nixos.org/t/set-default-application-for-mime-type-with-home-manager/17190/4
 
     home.pointerCursor = {
       gtk.enable = true;
@@ -71,13 +71,20 @@ in
       enable = true;
 
       theme = {
-        package = pkgs.flat-remix-gtk;
-        name = "Flat-Remix-GTK-Grey-Darkest";
+        # package = pkgs.flat-remix-gtk;
+        package = pkgs.tokyonight-gtk-theme;
+        name = "Tokyonight-Dark-B";
       };
 
       iconTheme = {
-        package = pkgs.gnome.adwaita-icon-theme;
-        name = "Adwaita";
+        # package = pkgs.gnome.adwaita-icon-theme;
+        # name = "Adwaita";
+        name = "Tokyonight-Dark";
+      };
+
+      cursorTheme = {
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Classic";
       };
 
       font = {
@@ -85,5 +92,6 @@ in
         size = 11;
       };
     };
+
   };
 }
