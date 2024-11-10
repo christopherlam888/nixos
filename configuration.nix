@@ -174,6 +174,7 @@ in
     handbrake
     hyprpaper
     hyprshot
+    jq
     kdenlive
     kitty
     libreoffice
